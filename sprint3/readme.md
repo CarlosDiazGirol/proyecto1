@@ -1,205 +1,175 @@
-# CV & Portfolio - Carlos Díaz Girol (DATA)
+# Sprint 3 - Página About Me
 
-Portfolio personal y CV online desarrollado con HTML5, CSS3 y JavaScript vanilla (ES6+). Proyecto modular y escalable que combina diseño responsive con funcionalidades dinámicas.
+## Objetivo
+Crear una página profesional "About Me" con experiencia laboral, educación y valores personales, manteniendo el diseño establecido en Sprint 2.
 
-## Descripción del Proyecto
-
-Sitio web profesional que incluye:
-- **Página principal** con presentación profesional y proyectos destacados
-- **Página de contacto** con formulario funcional
-- **Cheatsheets** de HTML con navegación sticky
-- **Recursos** organizados por categorías con sistema de tabs
-- **Modo oscuro** persistente con localStorage
-- **Diseño responsive** adaptable a diferentes dispositivos
-
-## Tecnologías Utilizadas
-
-- **HTML5**: Semántica, accesibilidad y buenas prácticas
-- **CSS3**: Custom properties, Flexbox, animaciones y transiciones
-- **JavaScript ES6+**: Módulos, template strings, desestructuración
-- **FormSubmit**: Servicio de envío de emails sin backend
-- **Cloudinary**: CDN para imágenes optimizadas
-
-## Estructura del Proyecto
-
+## Estructura de Carpetas
 ```
-CVData/
-├── index.html              # Página principal
-├── contacto.html           # Formulario de contacto
-├── recursos.html           # Recursos organizados por tabs
-├── cheatsheet-html.html    # Cheatsheet con sticky header
+sprint3/
 ├── css/
-│   ├── reset.css           # CSS reset moderno
-│   └── styles.css          # Estilos principales con variables CSS
+│   ├── reset.css
+│   └── styles.css
 ├── js/
-│   ├── main.js             # Entry point de la aplicación
-│   ├── data/
-│   │   └── resources.js    # Datos de recursos
-│   ├── templates/
-│   │   └── template.js     # Header y footer compartidos
-│   └── utils/
-│       ├── darkMode.js     # Sistema de modo oscuro
-│       ├── menu.js         # Menú hamburguesa responsive
-│       ├── skillsList.js   # Generador de skills
-│       ├── cheatsheetsList.js
-│       └── resourcesGenerator.js.js  # Sistema de tabs
+│   └── main.js
+├── index.html
+├── contacto.html
+├── about.html
 └── readme.md
 ```
 
-## Características Implementadas
+## Nuevas Características del Sprint 3
 
-### Sistema de Diseño
-- **Variables CSS** para colores y tipografía consistentes
-- **Paleta de colores** organizada semánticamente (primary, secondary, accent, highlight, warning)
-- **Fuente Google Fonts**: Lato (300, 400, 700)
-- **Transiciones suaves** en interacciones (0.3s - 0.5s)
+### Nueva Página: about.html
+- **Página About Me completa** con información profesional detallada
+- Navegación actualizada en todas las páginas apuntando a `about.html`
+- Estructura semántica con secciones diferenciadas
 
-### Modo Oscuro
-- Toggle entre modo claro y oscuro
-- Persistencia con **localStorage**
-- Cambio de icono (☀️ / 🌙)
-- Sin flash inicial al cargar
-- Transiciones suaves entre temas
+### Secciones Implementadas
 
-### 📱 Responsive Design
-- **Mobile-first approach**
-- Menú hamburguesa en pantallas pequeñas
-- Breakpoints: 650px, 768px
-- `scroll-padding-top` para header fijo
+#### Biografía Personal
+- **Layout Flexbox** con imagen (polaroid) a la izquierda y contenido a la derecha
+- Foto con efecto **marco polaroid**:
+  - Fondo blanco simulando papel fotográfico
+  - Padding superior, lateral y extra en la parte inferior
+  - Sombra para efecto 3D
+  - Texto "DATA" en la parte inferior con diseño especial
+- Información personal:
+  - Nombre completo
+  - Título profesional
+  - Descripción detallada
+  - Botones de acción (GitHub, LinkedIn, Contacto)
 
-### Navegación
-- Header y footer compartidos mediante templates
-- Rutas relativas compatibles con GitHub Pages
-- Navegación sticky en cheatsheets
-- Enlaces activos marcados visualmente
+#### Diseño del Texto Polaroid
+- Texto "DATA" en mayúsculas
+- **Gradiente de colores** (azul → rojo → naranja)
+- Letra tamaño extra grande
+- Espaciado amplio entre letras (12px)
+- Rotación ligera (-2deg) para efecto natural
+- Fuente en negrita (black weight)
 
-### 📋 Sistema de Tabs (Recursos)
-- Tabs dinámicas generadas desde datos
-- Animación fade-in al cambiar de tab
-- Cards clickables completas
-- Layout flex con wrap responsive
-- Hover effects con elevación
+#### Experiencia Profesional
+- Lista de experiencias laborales
+- **Cards de experiencia** con:
+  - Borde izquierdo azul (4px)
+  - Título del puesto
+  - Empresa destacada en color azul
+  - Fechas de inicio y fin
+  - Descripción del rol
+  - Lista de responsabilidades y logros
+- Sin efectos hover (diseño limpio y profesional)
 
-### 📧 Formulario de Contacto
-- Integración con **FormSubmit**
-- Validación HTML5
-- Campos: nombre, email, asunto, mensaje
-- Protección anti-spam (honeypot)
-- Estilos consistentes con focus states
+#### Educación
+- Lista de formación académica y bootcamps
+- **Cards de educación** con:
+  - Estructura similar a experiencia
+  - Título del programa
+  - Institución educativa
+  - Lista de tecnologías y contenidos aprendidos
+- Sin efectos hover
 
-### Sticky Elements
-- Header fijo con `position: fixed`
-- Navegación de cheatsheet con `position: sticky`
-- Z-index organizado para capas correctas
+#### Valores Personales
+- Grid flexible de valores
+- **Cards de valores** con:
+  - Layout de 2 columnas en desktop
+  - Borde gris claro
+  - Título del valor en color azul
+  - Descripción del principio
+  - Diseño minimalista
+- Sin efectos hover
 
-## Funcionalidades JavaScript
+### Estilos CSS Añadidos
 
-### Modularización
-- **ES6 Modules** para organización del código
-- Imports/exports para reutilización
-- Separación de lógica por responsabilidades
-
-### Generación Dinámica
-- **Template strings** para HTML dinámico
-- Generación de tabs desde array de datos
-- Event listeners dinámicos con delegación
-
-### Gestión de Estado
-- **localStorage** para persistencia del tema
-- Toggle de clases con `classList.toggle()`
-- Estado reactivo en tabs y menú
-
-### Optimizaciones
-- Eventos delegados para mejor performance
-- Lazy initialization de componentes
-- Verificación de existencia de elementos (`&&` operator)
-
-## Características CSS Destacadas
-
-### Variables Personalizadas
+#### Polaroid Frame
 ```css
---primary: #785082    /* Púrpura */
---secondary: #6990aa  /* Azul grisáceo */
---accent: #8fd1fc     /* Azul claro */
---highlight: #ffda73  /* Amarillo */
---warning: #ff99a7    /* Rosa */
+.about-photo {
+  background-color: white;
+  padding: var(--spacing-md);
+  padding-bottom: var(--spacing-2xl);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+}
+
+.polaroid-caption {
+  gradient: azul → rojo → naranja
+  letter-spacing: 12px
+  transform: rotate(-2deg)
+}
 ```
 
-### Animaciones
-- **fadeIn** para tabs
-- **translateY** en hover de cards
-- **Transiciones** en colores y transformaciones
+#### Cards System
+```css
+.experience-card,
+.education-card {
+  background-color: white
+  border-left: 4px solid azul
+  padding: var(--spacing-xl)
+  border-radius: var(--radius-lg)
+}
 
-### Flexbox
-- Layout principal: `flex-direction: column`
-- Tabs: `flex-wrap` para responsive
-- Cards: `flex: 1 1 300px` para distribución
+.value-card {
+  flex layout (50% en desktop)
+  min-width: 300px
+  border: 1px solid gris claro
+}
+```
 
-## Buenas Prácticas Aplicadas
+### Responsive Design
 
-### HTML
-- Semántica correcta (`header`, `main`, `section`, `article`, `nav`)
-- Atributos `aria-*` para accesibilidad
-- Meta tags completos (viewport, charset, description)
-- Favicon configurado
+#### Desktop (992px+)
+- Biografía: foto polaroid a la izquierda, info a la derecha
+- Valores: 2 columnas
 
-### CSS
-- **Reset CSS** moderno
-- Mobile-first responsive
-- BEM-like naming en algunas clases
-- Variables para mantenibilidad
-- Transiciones smooth
+#### Tablet (768px - 991px)
+- Biografía: foto arriba, info abajo (columna)
+- Foto polaroid centrada con max-width 400px
+- Valores: 1 columna
 
-### JavaScript
-- ES6+ features (arrow functions, template literals, destructuring)
-- Módulos para separación de concerns
-- Event delegation
-- Código DRY (Don't Repeat Yourself)
+#### Mobile (< 768px)
+- Tipografía reducida
+- Botones en columna (100% ancho)
+- Todo apilado verticalmente
 
-## Mejoras Futuras Posibles
+## Mejoras Respecto al Sprint 2
 
-- [ ] Sistema de routing SPA
-- [ ] Lazy loading de imágenes
-- [ ] Service Worker para PWA
-- [ ] Tests unitarios
-- [ ] CI/CD con GitHub Actions
-- [ ] Internacionalización (i18n)
-- [ ] Modo automático (preferencia del sistema)
+1. **Nueva página About completa** con navegación integrada
+2. **Efecto polaroid** en la imagen con texto decorativo "DATA"
+3. **Sistema de cards** para experiencia, educación y valores
+4. **Layout flexible** que se adapta a diferentes pantallas
+5. **Diseño limpio** sin hover effects en las cards de contenido
+6. **Gradiente de texto** personalizado para el caption de la polaroid
+7. **Responsive total** con breakpoints optimizados
 
-## Deployment
+## Diferencias Clave con Sprint 2
 
-Preparado para **GitHub Pages**:
-- Rutas relativas configuradas
-- Assets en CDN (Cloudinary)
-- Sin dependencias de build
+- **Sin efectos hover** en cards de experiencia/educación/valores (diseño profesional y limpio)
+- **Polaroid frame** único para la foto del about
+- **Texto decorativo con gradiente** en caption de polaroid
+- **Layout bio** con flexbox (foto + info horizontal en desktop)
 
-## Seguridad y API Keys
+## Paleta de Colores (Mantenida)
+```css
+--primary: #2c3e50     /* Azul oscuro elegante */
+--secondary: #e74c3c   /* Rojo vibrante */
+--accent: #3498db      /* Azul brillante */
+--highlight: #f39c12   /* Naranja dorado */
+```
 
-### WeatherAPI Key
+## Próximos Pasos (Sprint 4)
+En el siguiente sprint se añadirá:
+- Funcionalidad JavaScript interactiva
+- Posible integración de skills dinámicos
+- Mejoras en la navegación
 
-Este proyecto utiliza **WeatherAPI** para mostrar el clima en tiempo real. La API key está visible en el código del cliente (`weather.js`):
-
-### Consideraciones Importantes
-
-**En este proyecto educativo es seguro porque:**
-- ✅ WeatherAPI tiene **plan gratuito** con límites de uso
-- ✅ La API incluye **rate limiting** automático
-- ✅ No hay costes asociados ni datos sensibles
-- ✅ El consumo está protegido por las restricciones de la API
-
-**En un proyecto profesional/producción:**
-- ❌ **NUNCA** expongas API keys con costes asociados
-- ❌ **NUNCA** expongas keys que accedan a datos sensibles
-- ✅ Usa **variables de entorno** con build tools (Vite, Webpack)
-- ✅ Usa **serverless functions** (Netlify, Vercel) como proxy
-- ✅ Implementa **backend proxy** para ocultar las keys
-
-##  Autor
-
-**Carlos Díaz Girol (DATA)**  
-Fullstack Developer & Tech Educator
-
-- LinkedIn: [carlosdiazgirol](https://www.linkedin.com/in/carlosdiazgirol/)
-- GitHub: [CarlosDiazGirol](https://github.com/CarlosDiazGirol)
+## Tecnologías Utilizadas
+- HTML5 semántico
+- CSS3 con variables personalizadas (heredadas de Sprint 2)
+- Google Fonts (Roboto)
+- Flexbox para todos los layouts
+- Gradientes CSS
+- Text clipping para efectos de texto
+- Transform y rotate para diseño polaroid
+- Media Queries responsive
 
 ---
+
+**Nota**: Este sprint mantiene la coherencia visual con Sprint 2 y añade una página About profesional con diseño polaroid único y sistema de cards limpio sin hover effects.

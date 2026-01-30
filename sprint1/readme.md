@@ -1,9 +1,9 @@
 # Sprint 1 - Estructura HTML Básica
 
-## 🎯 Objetivo
+## Objetivo
 Crear la estructura HTML básica del proyecto con dos páginas (Home y Contacto) utilizando etiquetas semánticas.
 
-## 📁 Estructura de Carpetas
+## Estructura de Carpetas
 ```
 sprint1/
 ├── css/
