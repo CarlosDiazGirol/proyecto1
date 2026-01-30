@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <title>Proyecto 1 - Sprints Overview</title>
   <style>
     * {
@@ -11,119 +15,168 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --accent: #3498db;
+      --highlight: #f39c12;
+      --dark: #1a1a1a;
+      --grey-dark: #34495e;
+      --grey: #7f8c8d;
+      --grey-light: #ecf0f1;
+      --light: #f8f9fa;
+      --white: #ffffff;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     .container {
-      max-width: 900px;
-      width: 100%;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 60px;
     }
 
     h1 {
-      text-align: center;
-      color: #333;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
       margin-bottom: 10px;
-      font-size: 2.5em;
     }
 
     .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 40px;
-      font-size: 1.1em;
+      margin-bottom: 20px;
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 500;
     }
 
     .sprints-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 60px;
     }
 
     .sprint-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      background-color: var(--white);
+      border: 1px solid var(--grey-light);
+      border-radius: 12px;
+      padding: 32px;
+      flex: 1 1 calc(33.333% - 16px);
+      min-width: 250px;
       text-decoration: none;
-      color: white;
-      display: block;
+      color: var(--dark);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .sprint-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border-color: var(--accent);
     }
 
     .sprint-number {
-      font-size: 3em;
-      font-weight: bold;
-      margin-bottom: 10px;
-      opacity: 0.9;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 12px;
+      line-height: 1;
     }
 
     .sprint-title {
-      font-size: 1.2em;
-      font-weight: 600;
-      margin-bottom: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
     }
 
     .sprint-description {
-      font-size: 0.9em;
-      opacity: 0.9;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      color: var(--grey);
+      line-height: 1.6;
     }
 
     .info-section {
-      background: #f8f9fa;
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 30px;
+      background-color: var(--white);
+      border: 1px solid var(--grey-light);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
     }
 
     .info-section h2 {
-      color: #667eea;
-      margin-bottom: 15px;
-      font-size: 1.5em;
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-size: 1.75rem;
+      font-weight: 700;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--secondary);
+      display: inline-block;
     }
 
     .info-section p {
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 10px;
+      color: var(--grey-dark);
+      line-height: 1.8;
+      margin-bottom: 12px;
     }
 
-    .footer {
+    footer {
       text-align: center;
-      margin-top: 30px;
-      color: #999;
-      font-size: 0.9em;
+      padding: 32px 0;
+      border-top: 1px solid var(--grey-light);
+    }
+
+    footer p {
+      color: var(--grey);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 992px) {
+      .sprint-card {
+        flex: 1 1 calc(50% - 12px);
+      }
     }
 
     @media (max-width: 768px) {
       h1 {
-        font-size: 2em;
+        font-size: 2.25rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
       }
 
       .sprints-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
       }
 
-      .container {
-        padding: 20px;
+      .sprint-card {
+        flex: 1 1 100%;
+      }
+
+      .info-section {
+        padding: 24px;
       }
     }
   </style>
