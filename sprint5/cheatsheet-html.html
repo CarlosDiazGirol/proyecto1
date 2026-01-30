@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>CheatSheet HTML</title>
+</head>
+
+<body>
+  <div class="site-container">
+    <header id="site-header" class="site-header"></header>
+    <main id="site-main">
+      <div class="site-content">
+        <section class="section cheatsheet">
+          <header class="cheatsheet-hero" id="top">
+            <span class="cs-badge">Cheat Sheet</span>
+            <h1>HTML</h1>
+            <p>
+              Guía rápida para escribir HTML moderno y semántico: estructura, meta, texto, enlaces, listas,
+              multimedia, tablas, formularios, accesibilidad y buenas prácticas.
+            </p>
+
+            <nav class="cheatsheet-sections">
+              <a href="#estructura">Estructura</a>
+              <a href="#meta">Meta</a>
+              <a href="#texto">Texto</a>
+              <a href="#enlaces">Enlaces</a>
+              <a href="#listas">Listas</a>
+              <a href="#media">Multimedia</a>
+              <a href="#forms">Formularios</a>
+              <a href="#semantica">Semántica</a>
+              <a href="#globales">Atributos</a>
+              <a href="#a11y">A11y</a>
+              <a href="#buenas">Buenas prácticas</a>
+            </nav>
+          </header>
+
+          <div class="cheatsheet-info">
+            <article class="cs-card" id="estructura">
+              <h2>Estructura básica</h2>
+              <p class="cs-mini">Plantilla mínima recomendada.</p>
+
+              <div class="cs-code">
+                <pre><code>&lt;!-- Ejemplo: estructura mínima --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Título&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;Contenido&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+
+              <div class="cs-note">
+                <ul class="cs-list">
+                  <li><strong>DOCTYPE</strong> primero.</li>
+                  <li><strong>meta charset</strong> lo más arriba posible.</li>
+                  <li><strong>viewport</strong> para responsive.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="cs-card" id="meta">
+              <h2>Metaetiquetas</h2>
+              <p class="cs-mini">Básicos + SEO + redes.</p>
+
+              <div class="cs-code">
+                <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Descripción clara"&gt;
+
+&lt;meta name="robots" content="index, follow"&gt;
+&lt;link rel="canonical" href="https://ejemplo.com/pagina"&gt;
+
+&lt;meta property="og:title" content="Título"&gt;
+&lt;meta property="og:description" content="Descripción"&gt;
+&lt;meta property="og:image" content="https://ejemplo.com/img.jpg"&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="cs-card" id="texto">
+              <h2>Encabezados y texto</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Sección&lt;/h2&gt;
+&lt;p&gt;Párrafo normal.&lt;/p&gt;
+
+&lt;strong&gt;Importante&lt;/strong&gt;
+&lt;em&gt;Énfasis&lt;/em&gt;
+&lt;mark&gt;Highlight&lt;/mark&gt;
+
+&lt;code&gt;console.log("inline")&lt;/code&gt;
+&lt;pre&gt;Bloque preformateado&lt;/pre&gt;</code></pre>
+              </div>
+
+              <p class="cs-mini">
+                Usa <span class="cs-kbd">h1</span> una vez por página y respeta la jerarquía.
+              </p>
+            </article>
+
+            <article class="cs-card" id="enlaces">
+              <h2>Enlaces y navegación</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;a href="https://ejemplo.com"&gt;Externo&lt;/a&gt;
+&lt;a href="/ruta"&gt;Interno&lt;/a&gt;
+&lt;a href="#seccion"&gt;Ancla&lt;/a&gt;
+
+&lt;a href="https://ejemplo.com" target="_blank" rel="noopener noreferrer"&gt;
+  Nueva pestaña (seguro)
+&lt;/a&gt;
+
+&lt;nav aria-label="Principal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#inicio"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="cs-card" id="listas">
+              <h2>Listas</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;ul&gt;
+  &lt;li&gt;Elemento&lt;/li&gt;
+  &lt;li&gt;
+    Con sublista
+    &lt;ul&gt;&lt;li&gt;Sub&lt;/li&gt;&lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Paso 1&lt;/li&gt;
+  &lt;li&gt;Paso 2&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="cs-card" id="media">
+              <h2>Imágenes y multimedia</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;img src="img.jpg" alt="Descripción"&gt;
+
+&lt;picture&gt;
+  &lt;source srcset="img.webp" type="image/webp"&gt;
+  &lt;img src="img.jpg" alt="Fallback" loading="lazy"&gt;
+&lt;/picture&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="cs-card" id="forms">
+              <h2>Formularios</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;form action="/procesar" method="POST"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;label for="msg"&gt;Mensaje&lt;/label&gt;
+  &lt;textarea id="msg" name="msg" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+
+              <div class="cs-note">
+                <ul class="cs-list">
+                  <li>Siempre <strong>label + for</strong> conectado a un <strong>id</strong>.</li>
+                  <li>Usa <strong>required</strong>, <strong>minlength</strong>, <strong>pattern</strong> cuando
+                    aplique.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="cs-card" id="semantica">
+              <h2>HTML semántico</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav aria-label="Principal"&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;header&gt;
+      &lt;h2&gt;Título&lt;/h2&gt;
+      &lt;time datetime="2024-03-15"&gt;15/03/2024&lt;/time&gt;
+    &lt;/header&gt;
+    &lt;section&gt;...&lt;/section&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+              </div>
+
+              <details class="cs-details">
+                <summary>Detalles colapsables</summary>
+                <div class="cs-code">
+                  <pre><code>&lt;details&gt;
+  &lt;summary&gt;Mostrar más&lt;/summary&gt;
+  &lt;p&gt;Contenido adicional&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+              </details>
+            </article>
+
+            <article class="cs-card" id="globales">
+              <h2>Atributos globales</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;div id="unico"&gt;...&lt;/div&gt;
+&lt;div class="card highlight"&gt;...&lt;/div&gt;
+
+&lt;div data-producto-id="123" data-precio="29.99"&gt;...&lt;/div&gt;
+
+&lt;button aria-label="Cerrar" tabindex="0"&gt;X&lt;/button&gt;
+
+&lt;div contenteditable="true"&gt;Editable&lt;/div&gt;
+&lt;div hidden&gt;Oculto&lt;/div&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="cs-card" id="a11y">
+              <h2>Accesibilidad (A11y)</h2>
+
+              <div class="cs-code">
+                <pre><code>&lt;a href="#main"&gt;Saltar al contenido&lt;/a&gt;
+
+&lt;img src="decoracion.jpg" alt=""&gt;
+
+&lt;button aria-expanded="false" aria-controls="menu"&gt;
+  Menú
+&lt;/button&gt;
+
+&lt;div aria-live="polite"&gt;Mensajes de estado&lt;/div&gt;</code></pre>
+              </div>
+
+              <p class="cs-mini">Prioriza semántica real antes que ARIA.</p>
+            </article>
+
+            <article class="cs-card" id="buenas">
+              <h2>Mejores prácticas</h2>
+
+              <ul class="cs-list">
+                <li>HTML válido, indentación consistente.</li>
+                <li>Imágenes con <strong>alt</strong> descriptivo (o vacío si decorativa).</li>
+                <li>Links externos con <strong>rel="noopener noreferrer"</strong>.</li>
+                <li>Performance: <strong>loading="lazy"</strong> en imágenes no críticas.</li>
+                <li>Testing: Validator, Lighthouse, WAVE / axe.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+  </div>
+  <script defer type="module" src="./js/main.js"></script>
+</body>
+
+</html>
