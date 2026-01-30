@@ -1,205 +1,133 @@
-# CV & Portfolio - Carlos Díaz Girol (DATA)
+# Sprint 2 - Diseño CSS y Estilos
 
-Portfolio personal y CV online desarrollado con HTML5, CSS3 y JavaScript vanilla (ES6+). Proyecto modular y escalable que combina diseño responsive con funcionalidades dinámicas.
+## Objetivo
+Aplicar estilos CSS profesionales al proyecto, implementando un sistema de diseño con variables CSS, tipografía Roboto y animaciones.
 
-## Descripción del Proyecto
-
-Sitio web profesional que incluye:
-- **Página principal** con presentación profesional y proyectos destacados
-- **Página de contacto** con formulario funcional
-- **Cheatsheets** de HTML con navegación sticky
-- **Recursos** organizados por categorías con sistema de tabs
-- **Modo oscuro** persistente con localStorage
-- **Diseño responsive** adaptable a diferentes dispositivos
-
-## Tecnologías Utilizadas
-
-- **HTML5**: Semántica, accesibilidad y buenas prácticas
-- **CSS3**: Custom properties, Flexbox, animaciones y transiciones
-- **JavaScript ES6+**: Módulos, template strings, desestructuración
-- **FormSubmit**: Servicio de envío de emails sin backend
-- **Cloudinary**: CDN para imágenes optimizadas
-
-## Estructura del Proyecto
-
+## Estructura de Carpetas
 ```
-CVData/
-├── index.html              # Página principal
-├── contacto.html           # Formulario de contacto
-├── recursos.html           # Recursos organizados por tabs
-├── cheatsheet-html.html    # Cheatsheet con sticky header
+sprint2/
 ├── css/
-│   ├── reset.css           # CSS reset moderno
-│   └── styles.css          # Estilos principales con variables CSS
+│   ├── reset.css
+│   └── styles.css
 ├── js/
-│   ├── main.js             # Entry point de la aplicación
-│   ├── data/
-│   │   └── resources.js    # Datos de recursos
-│   ├── templates/
-│   │   └── template.js     # Header y footer compartidos
-│   └── utils/
-│       ├── darkMode.js     # Sistema de modo oscuro
-│       ├── menu.js         # Menú hamburguesa responsive
-│       ├── skillsList.js   # Generador de skills
-│       ├── cheatsheetsList.js
-│       └── resourcesGenerator.js.js  # Sistema de tabs
+│   └── main.js
+├── index.html
+├── contacto.html
 └── readme.md
 ```
 
-## Características Implementadas
+## Nuevas Características del Sprint 2
 
-### Sistema de Diseño
-- **Variables CSS** para colores y tipografía consistentes
-- **Paleta de colores** organizada semánticamente (primary, secondary, accent, highlight, warning)
-- **Fuente Google Fonts**: Lato (300, 400, 700)
-- **Transiciones suaves** en interacciones (0.3s - 0.5s)
+### Sistema de Diseño CSS
+- **Variables CSS** implementadas con:
+  - Paleta de colores personalizada (azul oscuro, rojo vibrante, naranja dorado)
+  - Escalas de tamaños de fuente responsive
+  - Sistema de espaciado consistente
+  - Tiempos de transición estandarizados
+  - Breakpoints para diseño responsive
+  - Sombras y bordes redondeados
 
-### Modo Oscuro
-- Toggle entre modo claro y oscuro
-- Persistencia con **localStorage**
-- Cambio de icono (☀️ / 🌙)
-- Sin flash inicial al cargar
-- Transiciones suaves entre temas
+### Tipografía
+- **Google Fonts - Roboto** integrado
+- Pesos de fuente: 300, 400, 500, 700, 900
+- Jerarquía tipográfica clara
+- Line-height optimizado para legibilidad
 
-### 📱 Responsive Design
-- **Mobile-first approach**
-- Menú hamburguesa en pantallas pequeñas
-- Breakpoints: 650px, 768px
-- `scroll-padding-top` para header fijo
+### Estilos Implementados
 
-### Navegación
-- Header y footer compartidos mediante templates
-- Rutas relativas compatibles con GitHub Pages
-- Navegación sticky en cheatsheets
-- Enlaces activos marcados visualmente
+#### Header & Navegación
+- Header sticky con sombra
+- Logo con efecto hover
+- Enlaces con subrayado animado
+- Transiciones suaves
 
-### 📋 Sistema de Tabs (Recursos)
-- Tabs dinámicas generadas desde datos
-- Animación fade-in al cambiar de tab
-- Cards clickables completas
-- Layout flex con wrap responsive
-- Hover effects con elevación
+#### Hero Section
+- Layout flexible con imagen arriba y texto abajo
+- Imagen grande centrada
+- Tipografía impactante y jerarquizada
+- 3 botones de acción (LinkedIn, GitHub, Contacto)
+- Espaciado consistente
 
-### 📧 Formulario de Contacto
-- Integración con **FormSubmit**
-- Validación HTML5
-- Campos: nombre, email, asunto, mensaje
-- Protección anti-spam (honeypot)
-- Estilos consistentes con focus states
+#### Skills
+- Layout flexible y adaptativo
+- Cards con efecto hover (elevación y cambio de color)
+- Transiciones suaves
+- Responsive design
 
-### Sticky Elements
-- Header fijo con `position: fixed`
-- Navegación de cheatsheet con `position: sticky`
-- Z-index organizado para capas correctas
+#### Proyectos
+- Layout flexible multi-columna
+- Cards con sombras y efectos hover
+- Listas con bullets personalizados
+- Diseño escalable
 
-## Funcionalidades JavaScript
+#### Cheatsheets
+- Cards con gradientes
+- Efectos de transformación al hover
+- Diseño visual atractivo
 
-### Modularización
-- **ES6 Modules** para organización del código
-- Imports/exports para reutilización
-- Separación de lógica por responsabilidades
+#### Formulario de Contacto
+- Título y subtítulo fuera del formulario
+- Estructura consistente para todas las secciones
+- Container sin sombras
+- Inputs con estados focus
+- Botón con gradiente
+- Validación visual
 
-### Generación Dinámica
-- **Template strings** para HTML dinámico
-- Generación de tabs desde array de datos
-- Event listeners dinámicos con delegación
-
-### Gestión de Estado
-- **localStorage** para persistencia del tema
-- Toggle de clases con `classList.toggle()`
-- Estado reactivo en tabs y menú
-
-### Optimizaciones
-- Eventos delegados para mejor performance
-- Lazy initialization de componentes
-- Verificación de existencia de elementos (`&&` operator)
-
-## Características CSS Destacadas
-
-### Variables Personalizadas
-```css
---primary: #785082    /* Púrpura */
---secondary: #6990aa  /* Azul grisáceo */
---accent: #8fd1fc     /* Azul claro */
---highlight: #ffda73  /* Amarillo */
---warning: #ff99a7    /* Rosa */
-```
+#### Footer
+- Fondo oscuro contrastante
+- Navegación centralizada
+- **Animación heartbeat en el corazón ❤**
+- Texto: "Hecho con ❤ por Carlos Díaz Girol"
 
 ### Animaciones
-- **fadeIn** para tabs
-- **translateY** en hover de cards
-- **Transiciones** en colores y transformaciones
+- **@keyframes heartbeat** - Latido del corazón en footer
+- Transiciones en todos los elementos interactivos
+- Efectos hover suaves
 
-### Flexbox
-- Layout principal: `flex-direction: column`
-- Tabs: `flex-wrap` para responsive
-- Cards: `flex: 1 1 300px` para distribución
+### Responsive Design
+- **Mobile First approach**
+- Breakpoints:
+  - 576px (móvil)
+  - 768px (tablet)
+  - 992px (desktop)
+- Layout flexible con Flexbox
+- Tipografía escalable
+- Navegación responsive
+- Botones adaptables a diferentes pantallas
 
-## Buenas Prácticas Aplicadas
+## Paleta de Colores
+```css
+--primary: #2c3e50     /* Azul oscuro elegante */
+--secondary: #e74c3c   /* Rojo vibrante */
+--accent: #3498db      /* Azul brillante */
+--highlight: #f39c12   /* Naranja dorado */
+--success: #27ae60     /* Verde */
+```
 
-### HTML
-- Semántica correcta (`header`, `main`, `section`, `article`, `nav`)
-- Atributos `aria-*` para accesibilidad
-- Meta tags completos (viewport, charset, description)
-- Favicon configurado
+## Mejoras Respecto al Sprint 1
+1. Sistema completo de variables CSS
+2. Tipografía profesional con Roboto
+3. Diseño visual atractivo y moderno
+4. Interactividad con efectos hover
+5. Animaciones personalizadas
+6. Diseño 100% responsive
+7. Footer personalizado con animación
 
-### CSS
-- **Reset CSS** moderno
-- Mobile-first responsive
-- BEM-like naming en algunas clases
-- Variables para mantenibilidad
-- Transiciones smooth
+## Próximos Pasos (Sprint 3)
+En el siguiente sprint se añadirá:
+- JavaScript para interactividad
+- Validación de formulario
+- Efectos dinámicos adicionales
 
-### JavaScript
-- ES6+ features (arrow functions, template literals, destructuring)
-- Módulos para separación de concerns
-- Event delegation
-- Código DRY (Don't Repeat Yourself)
-
-## Mejoras Futuras Posibles
-
-- [ ] Sistema de routing SPA
-- [ ] Lazy loading de imágenes
-- [ ] Service Worker para PWA
-- [ ] Tests unitarios
-- [ ] CI/CD con GitHub Actions
-- [ ] Internacionalización (i18n)
-- [ ] Modo automático (preferencia del sistema)
-
-## Deployment
-
-Preparado para **GitHub Pages**:
-- Rutas relativas configuradas
-- Assets en CDN (Cloudinary)
-- Sin dependencias de build
-
-## Seguridad y API Keys
-
-### WeatherAPI Key
-
-Este proyecto utiliza **WeatherAPI** para mostrar el clima en tiempo real. La API key está visible en el código del cliente (`weather.js`):
-
-### Consideraciones Importantes
-
-**En este proyecto educativo es seguro porque:**
-- ✅ WeatherAPI tiene **plan gratuito** con límites de uso
-- ✅ La API incluye **rate limiting** automático
-- ✅ No hay costes asociados ni datos sensibles
-- ✅ El consumo está protegido por las restricciones de la API
-
-**En un proyecto profesional/producción:**
-- ❌ **NUNCA** expongas API keys con costes asociados
-- ❌ **NUNCA** expongas keys que accedan a datos sensibles
-- ✅ Usa **variables de entorno** con build tools (Vite, Webpack)
-- ✅ Usa **serverless functions** (Netlify, Vercel) como proxy
-- ✅ Implementa **backend proxy** para ocultar las keys
-
-##  Autor
-
-**Carlos Díaz Girol (DATA)**  
-Fullstack Developer & Tech Educator
-
-- LinkedIn: [carlosdiazgirol](https://www.linkedin.com/in/carlosdiazgirol/)
-- GitHub: [CarlosDiazGirol](https://github.com/CarlosDiazGirol)
+## Tecnologías Utilizadas
+- HTML5 semántico
+- CSS3 con variables personalizadas
+- Google Fonts (Roboto)
+- Flexbox para layouts
+- Media Queries
+- Animaciones CSS
+- Botones con enlaces externos (target="_blank")
 
 ---
+
+**Nota**: Este sprint se enfoca exclusivamente en el diseño visual. La funcionalidad JavaScript se implementará en sprints posteriores.

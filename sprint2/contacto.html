@@ -4,55 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/styles.css">
   <title>Contacto - CV & Portfolio de Carlos Díaz Girol</title>
 </head>
 <body>
-  <div class="site-container">
-    <header id="site-header" class="site-header"></header>
-    <main id="site-main" class="site-main">
-      <div class="site-content">
-        
-        <section class="contact-section section">
-          <div class="contact-content">
-            <h1>Contacto</h1>
-            <h2>¿Tienes alguna pregunta o propuesta? Rellena el formulario y me pondré en contacto contigo lo antes posible.</h2>
-            
-            <form class="contact-form" action="https://formsubmit.co/carlos@thebridge.tech" method="POST">
-
-              <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portfolio">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="text" name="_honey" style="display:none">
-              
-              <div class="form-group">
-                <label for="nombre">Nombre*</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="asunto">Asunto*</label>
-                <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="mensaje">Mensaje*</label>
-                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-            </form>
-          </div>
-        </section>
+  <header>
+    <nav>
+      <a href="index.html" class="logo"><strong>CD</strong></a>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Cheatsheets</a></li>
+        <li><a href="#">Recursos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contacto</h1>
+      <h2 class="contact-intro">¿Tienes alguna pregunta o propuesta? Rellena el formulario y me pondré en contacto contigo lo antes posible.</h2>
       
-    </main>
-    <footer id="site-footer" class="site-footer"></footer>
-  </div>
-  <script defer type="module" src="./js/main.js"></script>
+      <div class="contact-container">
+        <form class="contact-form" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="https://github.com/CarlosDiazGirol" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/carlosdiazgirol/" target="_blank">LinkedIn</a>
+      <a href="index.html">Home</a>
+      <a href="#">About</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <p>Hecho con <span class="heart">❤</span> por Data</p>
+    <p>&copy; 2026 Carlos Díaz Girol - Fullstack Developer & Tech Educator</p>
+  </footer>
+
+  <script src="./js/main.js"></script>
 </body>
 </html>
