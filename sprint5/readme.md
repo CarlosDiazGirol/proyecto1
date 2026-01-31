@@ -1,205 +1,326 @@
-# CV & Portfolio - Carlos Díaz Girol (DATA)
+# Sprint 5 - Cheatsheets y Recursos
 
-Portfolio personal y CV online desarrollado con HTML5, CSS3 y JavaScript vanilla (ES6+). Proyecto modular y escalable que combina diseño responsive con funcionalidades dinámicas.
+## Objetivo
+Crear páginas de cheatsheets con navegación sticky y una página de recursos con sistema de pestañas, manteniendo toda la funcionalidad del Sprint 4 y añadiendo contenido educativo.
 
-## Descripción del Proyecto
-
-Sitio web profesional que incluye:
-- **Página principal** con presentación profesional y proyectos destacados
-- **Página de contacto** con formulario funcional
-- **Cheatsheets** de HTML con navegación sticky
-- **Recursos** organizados por categorías con sistema de tabs
-- **Modo oscuro** persistente con localStorage
-- **Diseño responsive** adaptable a diferentes dispositivos
-
-## Tecnologías Utilizadas
-
-- **HTML5**: Semántica, accesibilidad y buenas prácticas
-- **CSS3**: Custom properties, Flexbox, animaciones y transiciones
-- **JavaScript ES6+**: Módulos, template strings, desestructuración
-- **FormSubmit**: Servicio de envío de emails sin backend
-- **Cloudinary**: CDN para imágenes optimizadas
-
-## Estructura del Proyecto
-
+## Estructura de Carpetas
 ```
-CVData/
-├── index.html              # Página principal
-├── contacto.html           # Formulario de contacto
-├── recursos.html           # Recursos organizados por tabs
-├── cheatsheet-html.html    # Cheatsheet con sticky header
+sprint5/
 ├── css/
-│   ├── reset.css           # CSS reset moderno
-│   └── styles.css          # Estilos principales con variables CSS
+│   ├── reset.css
+│   └── styles.css
 ├── js/
-│   ├── main.js             # Entry point de la aplicación
-│   ├── data/
-│   │   └── resources.js    # Datos de recursos
+│   ├── main.js
 │   ├── templates/
-│   │   └── template.js     # Header y footer compartidos
-│   └── utils/
-│       ├── darkMode.js     # Sistema de modo oscuro
-│       ├── menu.js         # Menú hamburguesa responsive
-│       ├── skillsList.js   # Generador de skills
-│       ├── cheatsheetsList.js
-│       └── resourcesGenerator.js.js  # Sistema de tabs
+│   │   └── template.js
+│   ├── utils/
+│   │   ├── darkMode.js
+│   │   ├── menu.js
+│   │   ├── skillsList.js
+│   │   ├── cheatsheetsList.js
+│   │   └── resourcesGenerator.js.js
+│   └── data/
+│       ├── skills.js
+│       ├── cheatsheets.js
+│       └── resources.js
+├── index.html
+├── about.html
+├── contacto.html
+├── recursos.html
+├── cheatsheet-html.html
+├── cheatsheet-css.html
+├── cheatsheet-js.html
 └── readme.md
 ```
 
-## Características Implementadas
+## Nuevas Características del Sprint 5
 
-### Sistema de Diseño
-- **Variables CSS** para colores y tipografía consistentes
-- **Paleta de colores** organizada semánticamente (primary, secondary, accent, highlight, warning)
-- **Fuente Google Fonts**: Lato (300, 400, 700)
-- **Transiciones suaves** en interacciones (0.3s - 0.5s)
+### 1. Páginas de Cheatsheets
+- **3 cheatsheets completos**: HTML5, CSS3 y JavaScript
+- Cada cheatsheet incluye:
+  - Hero section con badge y descripción
+  - Navegación sticky con enlaces a secciones
+  - Cards organizadas por temas
+  - Bloques de código con ejemplos
+  - Listas de mejores prácticas
+  
+#### Navegación Sticky
+- **Position sticky** debajo del header (top: 72px)
+- Enlaces a todas las secciones del cheatsheet
+- Scroll suave a cada sección con `scroll-margin-top`
+- **Oculta en mobile** (< 768px) para ahorrar espacio de pantalla
+- Diseño horizontal con flex-wrap para adaptarse
+- Hover con color accent para mejor UX
 
-### Modo Oscuro
-- Toggle entre modo claro y oscuro
-- Persistencia con **localStorage**
-- Cambio de icono (☀️ / 🌙)
-- Sin flash inicial al cargar
-- Transiciones suaves entre temas
+#### Estructura de Contenido
+- Secciones bien organizadas con IDs únicos
+- Cards con fondo blanco y sombras sutiles
+- Bloques de código con fondo gris y borde accent
+- Listas con bullets personalizados (▸)
+- Notas y descripciones en cursiva
 
-### 📱 Responsive Design
-- **Mobile-first approach**
-- Menú hamburguesa en pantallas pequeñas
-- Breakpoints: 650px, 768px
-- `scroll-padding-top` para header fijo
+### 2. Sección Cheatsheets en Index
+- Nueva sección en página principal
+- Cards dinámicas generadas desde `cheatsheets.js`
+- Grid responsive con enlaces a cada cheatsheet
+- Iconos de Simple Icons para cada tecnología
+- Botón "Ver CheatSheet" con estilo accent
 
-### Navegación
-- Header y footer compartidos mediante templates
-- Rutas relativas compatibles con GitHub Pages
-- Navegación sticky en cheatsheets
-- Enlaces activos marcados visualmente
+### 3. Página de Recursos (recursos.html)
+- Sistema de **pestañas/tabs** completamente funcional
+- 6 categorías de recursos:
+  1. Documentación Oficial (MDN, W3C, Can I Use, DevDocs, FormSubmit)
+  2. Aprendizaje (freeCodeCamp, JavaScript.info, CSS-Tricks, Web.dev, Frontend Masters)
+  3. Herramientas (VS Code, GitHub, CodePen, Figma, Netlify)
+  4. Accesibilidad (WCAG, WebAIM, WAVE, Axe DevTools)
+  5. Blogs & Comunidades (Smashing Magazine, A List Apart, Dev.to, Stack Overflow, Frontend Focus)
+  6. Inspiración & Design (Awwwards, Dribbble, Behance, Coolors, Google Fonts)
 
-### 📋 Sistema de Tabs (Recursos)
-- Tabs dinámicas generadas desde datos
-- Animación fade-in al cambiar de tab
-- Cards clickables completas
-- Layout flex con wrap responsive
-- Hover effects con elevación
+#### Sistema de Tabs
+- Tabs horizontales con flex-wrap responsive
+- Tab activa con fondo accent y color blanco
+- Resto de tabs con bordes y hover effect
+- Cambio de contenido con animación fade-in
+- Solo un panel visible a la vez (display: none/block)
+- Event listeners para cambiar tabs al hacer click
 
-### 📧 Formulario de Contacto
-- Integración con **FormSubmit**
-- Validación HTML5
-- Campos: nombre, email, asunto, mensaje
-- Protección anti-spam (honeypot)
-- Estilos consistentes con focus states
+#### Cards de Recursos
+- Grid responsive (2 columnas en desktop, 1 en mobile)
+- Cada card es un enlace externo con `target="_blank"`
+- Título y descripción del recurso
+- Borde izquierdo accent que cambia a secondary en hover
+- Efecto de elevación (translateY) en hover
+- Enlaces con `rel="noopener noreferrer"` por seguridad
 
-### Sticky Elements
-- Header fijo con `position: fixed`
-- Navegación de cheatsheet con `position: sticky`
-- Z-index organizado para capas correctas
+### 4. Actualizaciones en Template
+- Enlaces de navegación actualizados:
+  - Cheatsheets apunta a `index.html#cheatsheets`
+  - Recursos apunta a `recursos.html`
+- Menú completamente funcional en todas las páginas
 
-## Funcionalidades JavaScript
-
-### Modularización
-- **ES6 Modules** para organización del código
-- Imports/exports para reutilización
-- Separación de lógica por responsabilidades
-
-### Generación Dinámica
-- **Template strings** para HTML dinámico
-- Generación de tabs desde array de datos
-- Event listeners dinámicos con delegación
-
-### Gestión de Estado
-- **localStorage** para persistencia del tema
-- Toggle de clases con `classList.toggle()`
-- Estado reactivo en tabs y menú
-
-### Optimizaciones
-- Eventos delegados para mejor performance
-- Lazy initialization de componentes
-- Verificación de existencia de elementos (`&&` operator)
-
-## Características CSS Destacadas
-
-### Variables Personalizadas
-```css
---primary: #785082    /* Púrpura */
---secondary: #6990aa  /* Azul grisáceo */
---accent: #8fd1fc     /* Azul claro */
---highlight: #ffda73  /* Amarillo */
---warning: #ff99a7    /* Rosa */
-```
-
-### Animaciones
-- **fadeIn** para tabs
-- **translateY** en hover de cards
-- **Transiciones** en colores y transformaciones
-
-### Flexbox
-- Layout principal: `flex-direction: column`
-- Tabs: `flex-wrap` para responsive
-- Cards: `flex: 1 1 300px` para distribución
-
-## Buenas Prácticas Aplicadas
+## Implementación Técnica
 
 ### HTML
-- Semántica correcta (`header`, `main`, `section`, `article`, `nav`)
-- Atributos `aria-*` para accesibilidad
-- Meta tags completos (viewport, charset, description)
-- Favicon configurado
+
+#### Cheatsheets
+```html
+<nav class="cheatsheet-nav" id="cheatsheetNav">
+  <a href="#estructura">Estructura</a>
+  <a href="#meta">Meta</a>
+  <!-- más enlaces... -->
+</nav>
+
+<section class="cheatsheet-hero">
+  <span class="cs-badge">Cheat Sheet</span>
+  <h1>HTML</h1>
+  <p>Guía rápida...</p>
+</section>
+
+<section class="cheatsheet-content">
+  <article class="cs-card" id="estructura">
+    <h2>Estructura básica</h2>
+    <div class="cs-code">
+      <pre><code><!-- código aquí --></code></pre>
+    </div>
+  </article>
+</section>
+```
+
+#### Recursos
+```html
+<section class="resources-section section">
+  <h1>Recursos</h1>
+  <p class="section-subtitle">Links curados...</p>
+  <!-- Tabs generadas dinámicamente desde JS -->
+</section>
+```
 
 ### CSS
-- **Reset CSS** moderno
-- Mobile-first responsive
-- BEM-like naming en algunas clases
-- Variables para mantenibilidad
-- Transiciones smooth
 
-### JavaScript
-- ES6+ features (arrow functions, template literals, destructuring)
-- Módulos para separación de concerns
-- Event delegation
-- Código DRY (Don't Repeat Yourself)
+#### Navegación Sticky
+```css
+.cheatsheet-nav {
+  position: sticky;
+  top: 72px;
+  background-color: var(--white);
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-## Mejoras Futuras Posibles
+@media (max-width: 768px) {
+  .cheatsheet-nav {
+    display: none;
+  }
+}
+```
 
-- [ ] Sistema de routing SPA
-- [ ] Lazy loading de imágenes
-- [ ] Service Worker para PWA
-- [ ] Tests unitarios
-- [ ] CI/CD con GitHub Actions
-- [ ] Internacionalización (i18n)
-- [ ] Modo automático (preferencia del sistema)
+#### Tabs de Recursos
+```css
+.tab-btn {
+  background-color: transparent;
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-normal);
+}
 
-## Deployment
+.tab-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
 
-Preparado para **GitHub Pages**:
-- Rutas relativas configuradas
-- Assets en CDN (Cloudinary)
-- Sin dependencias de build
+.tab-panel {
+  display: none;
+}
 
-## Seguridad y API Keys
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+```
 
-### WeatherAPI Key
+### JavaScript Modular
 
-Este proyecto utiliza **WeatherAPI** para mostrar el clima en tiempo real. La API key está visible en el código del cliente (`weather.js`):
+#### main.js
+```javascript
+import { header, footer } from './templates/template.js';
+import darkMode from './utils/darkMode.js';
+import getSkills from './utils/skillsList.js';
+import menu from './utils/menu.js';
+import getCheatsheets from './utils/cheatsheetsList.js';
+import { getResources } from './utils/resourcesGenerator.js.js';
 
-### Consideraciones Importantes
+// Cargar templates
+document.querySelector('header').innerHTML = header;
+document.querySelector('footer').innerHTML = footer;
 
-**En este proyecto educativo es seguro porque:**
-- ✅ WeatherAPI tiene **plan gratuito** con límites de uso
-- ✅ La API incluye **rate limiting** automático
-- ✅ No hay costes asociados ni datos sensibles
-- ✅ El consumo está protegido por las restricciones de la API
+// Inicializar funcionalidades
+darkMode();
+menu();
+getSkills();
+getCheatsheets();
+getResources();
+```
 
-**En un proyecto profesional/producción:**
-- ❌ **NUNCA** expongas API keys con costes asociados
-- ❌ **NUNCA** expongas keys que accedan a datos sensibles
-- ✅ Usa **variables de entorno** con build tools (Vite, Webpack)
-- ✅ Usa **serverless functions** (Netlify, Vercel) como proxy
-- ✅ Implementa **backend proxy** para ocultar las keys
+#### cheatsheetsList.js
+Genera cards dinámicas para la sección de cheatsheets en index:
+```javascript
+const html = cheatsheets.map(cs => `
+  <article class="cheatsheet-card">
+    <img src="${cs.icon}" alt="${cs.name}">
+    <h3>${cs.name}</h3>
+    <p>Guía rápida de referencia</p>
+    <a href="${cs.link}" class="btn-primary">Ver CheatSheet</a>
+  </article>
+`).join('');
+```
 
-##  Autor
+#### resourcesGenerator.js.js
+Genera sistema de tabs completo:
+1. Crea botones de tabs desde array de categorías
+2. Crea paneles con grid de cards para cada categoría
+3. Añade event listeners para cambiar tabs
+4. Primera tab activa por defecto
 
-**Carlos Díaz Girol (DATA)**  
-Fullstack Developer & Tech Educator
+## Responsive Design
 
-- LinkedIn: [carlosdiazgirol](https://www.linkedin.com/in/carlosdiazgirol/)
-- GitHub: [CarlosDiazGirol](https://github.com/CarlosDiazGirol)
+### Desktop (> 768px)
+- Navegación sticky visible en cheatsheets
+- Cards de recursos en 2 columnas
+- Tabs en una sola línea horizontal
+- Menú completo sin hamburguesa
+
+### Tablet (576px - 768px)
+- Navegación sticky OCULTA en cheatsheets
+- Cards de recursos en 2 columnas
+- Tabs con flex-wrap
+- Menú hamburguesa funcional
+
+### Mobile (< 576px)
+- Sin navegación sticky (más espacio vertical)
+- Cards de recursos en 1 columna
+- Tabs apiladas verticalmente
+- Todo optimizado para pantallas pequeñas
+
+## Datos
+
+### cheatsheets.js
+```javascript
+const cheatsheets = [
+  {
+    name: "HTML5",
+    icon: "https://cdn.simpleicons.org/html5/E34F26",
+    link: "/cheatsheet-html.html"
+  },
+  // CSS3 y JavaScript...
+];
+```
+
+### resources.js
+```javascript
+const resources = [
+  {
+    category: "Documentación Oficial",
+    items: [
+      {
+        title: "MDN Web Docs",
+        url: "https://developer.mozilla.org/",
+        note: "La referencia definitiva..."
+      }
+    ]
+  }
+];
+```
+
+## Modo Oscuro
+
+### Cheatsheets
+- Navegación sticky con fondo oscuro (#1e1e1e)
+- Cards con fondo #1e1e1e y borde #3a3a3a
+- Bloques de código con fondo #2a2a2a
+- Texto de código claro (#e0e0e0)
+
+### Recursos
+- Tabs con bordes oscuros
+- Tab activa mantiene accent (igual que modo claro)
+- Cards con fondo #1e1e1e
+- Hover y efectos funcionan igual
+
+## Mejoras Respecto al Sprint 4
+
+1. **Contenido educativo** con 3 cheatsheets completos
+2. **Navegación sticky responsive** que se oculta en mobile
+3. **Sistema de tabs funcional** con animaciones
+4. **Página de recursos curados** por categorías
+5. **Sección cheatsheets dinámica** en index
+6. **Mejor estructura de navegación** con enlaces actualizados
+7. **UX optimizada** con scroll-margin y animaciones fade
+
+## Paleta de Colores (Mantenida)
+```css
+--primary: #2c3e50
+--secondary: #e74c3c
+--accent: #3498db
+--highlight: #f39c12
+```
+
+## Proximos Pasos (Sprint 6)
+En el siguiente sprint se podría añadir:
+- Filtro de búsqueda en recursos
+- Favoritos con localStorage
+- Más cheatsheets (React, Node, Git)
+- Sistema de comentarios
+- Compartir en redes sociales
+
+## Tecnologías Utilizadas
+- HTML5 semántico
+- CSS3 con position sticky
+- JavaScript ES6+ (módulos, template strings, arrow functions, event listeners)
+- LocalStorage API (modo oscuro heredado)
+- Flexbox para layouts
+- Animaciones CSS (fadeIn, translateY)
+- Media Queries responsive
+- Simple Icons para iconos de tecnologías
 
 ---
+
+**Nota**: Este sprint añade contenido educativo valioso manteniendo toda la funcionalidad del Sprint 4. El sticky nav mejora la navegación en cheatsheets, y el sistema de tabs organiza recursos de forma eficiente. El diseño es responsive y accesible.

@@ -420,32 +420,65 @@ main {
 }
 
 /* Cheatsheets */
-.cheatsheets-grid {
+.section-intro {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+#cheatsheets-container {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
-  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
 }
 
 .cheatsheet-card {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  color: var(--white);
+  flex: 1 1 calc(25% - var(--spacing-md));
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary);
+  transition: all var(--transition-normal);
+}
+
+.cheatsheet-card:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  flex: 1 1 250px;
-  max-width: 350px;
+}
+
+.cheatsheet-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cheatsheet-card .cheatsheet-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cheatsheet-card h3 {
-  font-size: var(--fs-xl);
-  font-weight: var(--font-bold);
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
 }
 
 .cheatsheet-card p {
-  font-size: var(--fs-sm);
-  opacity: 0.9;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 /* Contact Section */
@@ -649,6 +682,10 @@ footer p {
     right: 0;
     opacity: 1;
   }
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
   
   .nav-links li {
     width: 100%;
@@ -688,6 +725,10 @@ footer p {
   .skill-card {
     flex: 1 1 calc(50% - var(--spacing-md));
   }
+  
+  .cheatsheet-card {
+    flex: 1 1 calc(50% - var(--spacing-md));
+  }
 }
 
 @media (max-width: 576px) {
@@ -708,6 +749,11 @@ footer p {
   }
   
   .skill-card {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  .cheatsheet-card {
     flex: 1 1 100%;
     min-width: 100%;
   }
@@ -1028,4 +1074,383 @@ body.dark-mode textarea {
 body.dark-mode input:focus,
 body.dark-mode textarea:focus {
   border-color: var(--accent);
+}
+
+/* ========================================
+   CHEATSHEET PAGES
+   ======================================== */
+
+/* Cheatsheet Sticky Navigation */
+.cheatsheet-nav {
+  position: sticky;
+  top: 60px;
+  background-color: var(--white);
+  border-bottom: 2px solid var(--light-gray);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cheatsheet-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.cheatsheet-nav a:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* Cheatsheet Hero */
+.cheatsheet-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: left;
+}
+
+.cs-badge {
+  display: block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+  width: fit-content;
+}
+
+.cheatsheet-hero h1 {
+  font-size: var(--fs-4xl);
+  font-weight: var(--font-bold);
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--secondary);
+  display: inline-block;
+}
+
+.cheatsheet-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+}
+
+/* Cheatsheet Content */
+.cheatsheet-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.cs-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 180px;
+}
+
+.cs-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cs-mini {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.cs-code {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+}
+
+.cs-code pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+.cs-code code {
+  font-family: inherit;
+}
+
+.cs-note {
+  margin: var(--spacing-md) 0;
+}
+
+.cs-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cs-list li {
+  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+}
+
+.cs-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Dark Mode for Cheatsheets */
+body.dark-mode .cheatsheet-nav {
+  background-color: #1e1e1e;
+  border-bottom-color: #3a3a3a;
+}
+
+body.dark-mode .cheatsheet-nav a {
+  color: var(--primary);
+}
+
+body.dark-mode .cheatsheet-nav a:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+body.dark-mode .cheatsheet-hero h1 {
+  color: var(--primary);
+}
+
+body.dark-mode .cs-card {
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark-mode .cs-card h2 {
+  color: var(--primary);
+}
+
+body.dark-mode .cs-code {
+  background-color: #2a2a2a;
+  border-left-color: var(--accent);
+}
+
+body.dark-mode .cs-code pre {
+  color: #e0e0e0;
+}
+
+/* Mobile - Hide sticky nav on small screens */
+@media (max-width: 768px) {
+  .cheatsheet-nav {
+    display: none;
+  }
+  
+  .cs-card {
+    scroll-margin-top: 90px;
+  }
+  
+  .cheatsheet-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================
+   RESOURCES PAGE
+   ======================================== */
+
+.resources-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.resources-section h1 {
+  text-align: left;
+  font-size: var(--fs-4xl);
+  font-weight: var(--font-bold);
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--secondary);
+  display: inline-block;
+}
+
+.section-subtitle {
+  text-align: left;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Tabs */
+.resources-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: 2px solid var(--light-gray);
+  color: var(--primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+/* Tab Panels */
+.tabs-content {
+  min-height: 400px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Resources Grid */
+.resources-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.resource-card {
+  flex: 1 1 calc(50% - var(--spacing-md));
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--primary);
+  transition: all var(--transition-normal);
+  border-left: 4px solid var(--accent);
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--secondary);
+}
+
+.resource-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Dark Mode for Resources */
+body.dark-mode .resources-section h1 {
+  color: var(--primary);
+}
+
+body.dark-mode .tab-btn {
+  border-color: #3a3a3a;
+  color: var(--primary);
+}
+
+body.dark-mode .tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+body.dark-mode .tab-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+body.dark-mode .resource-card {
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  border-left: 4px solid var(--accent);
+}
+
+body.dark-mode .resource-card:hover {
+  border-left-color: var(--secondary);
+  box-shadow: var(--shadow-md);
+}
+
+body.dark-mode .resource-card h3 {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resources-tabs {
+    gap: var(--spacing-xs);
+  }
+  
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .resource-card {
+    flex: 1 1 100%;
+  }
+  
+  .resources-section h1 {
+    font-size: 2rem;
+  }
 }

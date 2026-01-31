@@ -1,35 +1,44 @@
 const darkMode = () => {
-  const siteThemeMode = document.getElementById('site-theme-mode')
-  const themeIcon = document.getElementById('theme-icon')
-  const siteContainer = document.querySelector('.site-container')
-  const aboutmeInfo = document.querySelector('.aboutme-info')
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
   
-  // Deshabilitar transiciones temporalmente para que inicialmente no tenga el efecto de fadein si tiene elgido el dark mode
-  siteContainer.style.transition = 'none'
-  aboutmeInfo && (aboutmeInfo.style.transition = 'none')
+  if (!darkModeToggle) return;
   
-  const savedTheme = localStorage.getItem('theme')
-  const isDarkMode = savedTheme === 'dark'
+  // Deshabilitar transiciones temporalmente para evitar flash al cargar
+  body.style.transition = 'none';
+  
+  // Obtener tema guardado en localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const isDarkMode = savedTheme === 'dark';
+  
+  // Función para actualizar icono
+  const updateIcon = (isDark) => {
+    const sunIcon = darkModeToggle.querySelector('.sun-icon');
+    const moonIcon = darkModeToggle.querySelector('.moon-icon');
+    
+    if (sunIcon && moonIcon) {
+      sunIcon.style.display = isDark ? 'none' : 'block';
+      moonIcon.style.display = isDark ? 'block' : 'none';
+    }
+  };
   
   // Estado inicial
   if (isDarkMode) {
-    siteContainer.classList.add('dark')
-    themeIcon.innerText = '💡'
-  } else {
-    themeIcon.innerText = '🌙'
+    body.classList.add('dark-mode');
+    updateIcon(true);
   }
-
-  // Reactivar transiciones después de aplicar el estado inicial para que sí funcione la transición al pulsar el botón
+  
+  // Reactivar transiciones después de aplicar el estado inicial
   setTimeout(() => {
-    siteContainer.style.transition = ''
-    aboutmeInfo && (aboutmeInfo.style.transition = '')
-  }, 0)
+    body.style.transition = '';
+  }, 0);
+  
+  // Event listener para el toggle
+  darkModeToggle.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-mode');
+    updateIcon(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+};
 
-  siteThemeMode.addEventListener('click', () => {
-    const isDark = siteContainer.classList.toggle('dark')
-    themeIcon.innerText = isDark ? '💡' : '🌙' 
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
-  })
-}
-
-export default darkMode
+export default darkMode;
