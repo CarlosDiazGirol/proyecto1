@@ -1,205 +1,196 @@
-# CV & Portfolio - Carlos Díaz Girol (DATA)
+# Sprint 4 - JavaScript Interactivo y Templates
 
-Portfolio personal y CV online desarrollado con HTML5, CSS3 y JavaScript vanilla (ES6+). Proyecto modular y escalable que combina diseño responsive con funcionalidades dinámicas.
+## Objetivo
+Añadir funcionalidad JavaScript al proyecto para hacer el sitio dinámico e interactivo, implementando templates reutilizables, modo oscuro, skills dinámicas y menú hamburguesa funcional.
 
-## Descripción del Proyecto
-
-Sitio web profesional que incluye:
-- **Página principal** con presentación profesional y proyectos destacados
-- **Página de contacto** con formulario funcional
-- **Cheatsheets** de HTML con navegación sticky
-- **Recursos** organizados por categorías con sistema de tabs
-- **Modo oscuro** persistente con localStorage
-- **Diseño responsive** adaptable a diferentes dispositivos
-
-## Tecnologías Utilizadas
-
-- **HTML5**: Semántica, accesibilidad y buenas prácticas
-- **CSS3**: Custom properties, Flexbox, animaciones y transiciones
-- **JavaScript ES6+**: Módulos, template strings, desestructuración
-- **FormSubmit**: Servicio de envío de emails sin backend
-- **Cloudinary**: CDN para imágenes optimizadas
-
-## Estructura del Proyecto
-
+## Estructura de Carpetas
 ```
-CVData/
-├── index.html              # Página principal
-├── contacto.html           # Formulario de contacto
-├── recursos.html           # Recursos organizados por tabs
-├── cheatsheet-html.html    # Cheatsheet con sticky header
+sprint4/
 ├── css/
-│   ├── reset.css           # CSS reset moderno
-│   └── styles.css          # Estilos principales con variables CSS
+│   ├── reset.css
+│   └── styles.css
 ├── js/
-│   ├── main.js             # Entry point de la aplicación
-│   ├── data/
-│   │   └── resources.js    # Datos de recursos
+│   ├── main.js
 │   ├── templates/
-│   │   └── template.js     # Header y footer compartidos
-│   └── utils/
-│       ├── darkMode.js     # Sistema de modo oscuro
-│       ├── menu.js         # Menú hamburguesa responsive
-│       ├── skillsList.js   # Generador de skills
-│       ├── cheatsheetsList.js
-│       └── resourcesGenerator.js.js  # Sistema de tabs
+│   │   └── template.js
+│   ├── utils/
+│   │   ├── darkMode.js
+│   │   ├── menu.js
+│   │   └── skillsList.js
+│   └── data/
+│       └── skills.js
+├── index.html
+├── about.html
+├── contacto.html
 └── readme.md
 ```
 
-## Características Implementadas
+## Nuevas Características del Sprint 4
 
-### Sistema de Diseño
-- **Variables CSS** para colores y tipografía consistentes
-- **Paleta de colores** organizada semánticamente (primary, secondary, accent, highlight, warning)
-- **Fuente Google Fonts**: Lato (300, 400, 700)
-- **Transiciones suaves** en interacciones (0.3s - 0.5s)
+### 1. Templates JavaScript (template.js)
+- **Header y Footer dinámicos** generados desde JavaScript
+- Evita repetición de código HTML en todas las páginas
+- Exporta constantes `header` y `footer` con template strings
+- Iconos SVG para modo oscuro integrados en el template
+- Navegación con enlaces actualizados (About, Skills con ancla)
 
-### Modo Oscuro
-- Toggle entre modo claro y oscuro
-- Persistencia con **localStorage**
-- Cambio de icono (☀️ / 🌙)
-- Sin flash inicial al cargar
-- Transiciones suaves entre temas
+### 2. Modo Oscuro (darkMode.js)
+- **Toggle button** con iconos SVG (sol/luna) en el header
+- Clase `dark-mode` añadida al body al activar
+- **LocalStorage** para persistir preferencia del usuario
+- Cambio de iconos dinámico (sol visible en modo claro, luna en modo oscuro)
+- Estilos CSS completos para modo oscuro:
+  - Fondo oscuro (#121212)
+  - Textos claros (#e0e0e0)
+  - Cards con fondo #2a2a2a
+  - Header y footer adaptados
+  - Polaroid mantiene fondo blanco siempre
 
-### 📱 Responsive Design
-- **Mobile-first approach**
-- Menú hamburguesa en pantallas pequeñas
-- Breakpoints: 650px, 768px
-- `scroll-padding-top` para header fijo
+### 3. Skills Dinámicas (skillsList.js)
+- **Generación dinámica** de cards desde datos en `skills.js`
+- Filtra solo skills con `state: "dominada"`
+- Renderiza 15 skills en grid responsive:
+  - 4 columnas en desktop
+  - 2 columnas en tablet
+  - 1 columna en mobile
+- Información mostrada:
+  - Icono de la tecnología
+  - Nombre de la skill
+  - Nivel (avanzado, intermedio, básico)
+  - Descripción breve
+  - Tags con tecnologías relacionadas
+- Sin efectos hover (diseño limpio)
 
-### Navegación
-- Header y footer compartidos mediante templates
-- Rutas relativas compatibles con GitHub Pages
-- Navegación sticky en cheatsheets
-- Enlaces activos marcados visualmente
+### 4. Menú Hamburguesa Funcional (menu.js)
+- **Toggle JavaScript** para abrir/cerrar menú en mobile
+- Animación de hamburguesa a X:
+  - Primera línea rota 45deg
+  - Segunda línea desaparece (opacity: 0)
+  - Tercera línea rota -45deg
+- Menú desplegable desde arriba con animación suave
+- Aparece detrás del header con `translateY`
+- Cierre automático al hacer click en un enlace
+- Botón modo oscuro visible en el menú responsive
 
-### 📋 Sistema de Tabs (Recursos)
-- Tabs dinámicas generadas desde datos
-- Animación fade-in al cambiar de tab
-- Cards clickables completas
-- Layout flex con wrap responsive
-- Hover effects con elevación
+### 5. Sistema de Módulos ES6
+- Uso de `import/export` en JavaScript
+- Script con `type="module"` en HTML
+- Estructura modular y organizada:
+  - templates/ para componentes HTML
+  - utils/ para funcionalidades
+  - data/ para datos estáticos
+- main.js como punto de entrada que orquesta todo
 
-### 📧 Formulario de Contacto
-- Integración con **FormSubmit**
-- Validación HTML5
-- Campos: nombre, email, asunto, mensaje
-- Protección anti-spam (honeypot)
-- Estilos consistentes con focus states
-
-### Sticky Elements
-- Header fijo con `position: fixed`
-- Navegación de cheatsheet con `position: sticky`
-- Z-index organizado para capas correctas
-
-## Funcionalidades JavaScript
-
-### Modularización
-- **ES6 Modules** para organización del código
-- Imports/exports para reutilización
-- Separación de lógica por responsabilidades
-
-### Generación Dinámica
-- **Template strings** para HTML dinámico
-- Generación de tabs desde array de datos
-- Event listeners dinámicos con delegación
-
-### Gestión de Estado
-- **localStorage** para persistencia del tema
-- Toggle de clases con `classList.toggle()`
-- Estado reactivo en tabs y menú
-
-### Optimizaciones
-- Eventos delegados para mejor performance
-- Lazy initialization de componentes
-- Verificación de existencia de elementos (`&&` operator)
-
-## Características CSS Destacadas
-
-### Variables Personalizadas
-```css
---primary: #785082    /* Púrpura */
---secondary: #6990aa  /* Azul grisáceo */
---accent: #8fd1fc     /* Azul claro */
---highlight: #ffda73  /* Amarillo */
---warning: #ff99a7    /* Rosa */
-```
-
-### Animaciones
-- **fadeIn** para tabs
-- **translateY** en hover de cards
-- **Transiciones** en colores y transformaciones
-
-### Flexbox
-- Layout principal: `flex-direction: column`
-- Tabs: `flex-wrap` para responsive
-- Cards: `flex: 1 1 300px` para distribución
-
-## Buenas Prácticas Aplicadas
+## Implementación Técnica
 
 ### HTML
-- Semántica correcta (`header`, `main`, `section`, `article`, `nav`)
-- Atributos `aria-*` para accesibilidad
-- Meta tags completos (viewport, charset, description)
-- Favicon configurado
+- Header y footer vacíos (se llenan con JavaScript)
+- Script con `type="module"` para usar imports
+- Contenedor `#skills-container` para renderizar skills dinámicamente
+- Navegación con ancla `#skills` para scroll automático
 
 ### CSS
-- **Reset CSS** moderno
-- Mobile-first responsive
-- BEM-like naming en algunas clases
-- Variables para mantenibilidad
-- Transiciones smooth
+- Estilos para modo oscuro con selector `body.dark-mode`
+- Cards de skills responsive con Flexbox
+- Menú mobile con transiciones:
+  - `transform: translateY(-100%)` por defecto
+  - `transform: translateY(0)` cuando está activo
+  - Transición de opacity para efecto suave
+- Z-index apropiados para header (1000) y menú (999)
+- SVG icons con `display: block/none` según estado
 
-### JavaScript
-- ES6+ features (arrow functions, template literals, destructuring)
-- Módulos para separación de concerns
-- Event delegation
-- Código DRY (Don't Repeat Yourself)
+### JavaScript Modular
 
-## Mejoras Futuras Posibles
+#### main.js
+```javascript
+import { header, footer } from './templates/template.js';
+import darkMode from './utils/darkMode.js';
+import getSkills from './utils/skillsList.js';
+import menu from './utils/menu.js';
 
-- [ ] Sistema de routing SPA
-- [ ] Lazy loading de imágenes
-- [ ] Service Worker para PWA
-- [ ] Tests unitarios
-- [ ] CI/CD con GitHub Actions
-- [ ] Internacionalización (i18n)
-- [ ] Modo automático (preferencia del sistema)
+// Cargar templates
+document.querySelector('header').innerHTML = header;
+document.querySelector('footer').innerHTML = footer;
 
-## Deployment
+// Inicializar funcionalidades
+darkMode();
+menu();
+getSkills();
+```
 
-Preparado para **GitHub Pages**:
-- Rutas relativas configuradas
-- Assets en CDN (Cloudinary)
-- Sin dependencias de build
+#### Funciones Clave
+- **darkMode()**: Gestiona toggle, localStorage y cambio de iconos
+- **menu()**: Toggle hamburguesa y cierre al click en enlaces
+- **getSkills()**: Filtra, mapea y renderiza skills desde data
 
-## Seguridad y API Keys
+## Responsive Design
 
-### WeatherAPI Key
+### Desktop (> 768px)
+- Menú horizontal completo visible
+- Botón modo oscuro visible a la derecha
+- Skills en 4 columnas
+- Hamburguesa oculta
 
-Este proyecto utiliza **WeatherAPI** para mostrar el clima en tiempo real. La API key está visible en el código del cliente (`weather.js`):
+### Tablet (576px - 768px)
+- Menú hamburguesa visible
+- Botón modo oscuro en la barra superior
+- Skills en 2 columnas
+- Menú desplegable desde arriba
 
-### Consideraciones Importantes
+### Mobile (< 576px)
+- Skills en 1 columna
+- Menú hamburguesa funcional
+- Botón modo oscuro centrado
+- Todo apilado verticalmente
 
-**En este proyecto educativo es seguro porque:**
-- ✅ WeatherAPI tiene **plan gratuito** con límites de uso
-- ✅ La API incluye **rate limiting** automático
-- ✅ No hay costes asociados ni datos sensibles
-- ✅ El consumo está protegido por las restricciones de la API
+## Mejoras Respecto al Sprint 3
 
-**En un proyecto profesional/producción:**
-- ❌ **NUNCA** expongas API keys con costes asociados
-- ❌ **NUNCA** expongas keys que accedan a datos sensibles
-- ✅ Usa **variables de entorno** con build tools (Vite, Webpack)
-- ✅ Usa **serverless functions** (Netlify, Vercel) como proxy
-- ✅ Implementa **backend proxy** para ocultar las keys
+1. **JavaScript funcional** en lugar de solo HTML/CSS estático
+2. **Templates reutilizables** eliminan duplicación de código
+3. **Modo oscuro completo** con persistencia en localStorage
+4. **Skills dinámicas** desde archivo de datos
+5. **Menú hamburguesa interactivo** con animaciones
+6. **Sistema modular ES6** con imports/exports
+7. **Mejor UX** con animaciones suaves y estados persistentes
 
-##  Autor
+## Datos en skills.js
 
-**Carlos Díaz Girol (DATA)**  
-Fullstack Developer & Tech Educator
+Cada skill incluye:
+```javascript
+{
+  name: "HTML5",
+  icon: "https://cdn.simpleicons.org/html5/E34F26",
+  state: "dominada",
+  level: "avanzado",
+  description: "Descripción de la tecnología",
+  tags: ["Tag1", "Tag2", "Tag3"]
+}
+```
 
-- LinkedIn: [carlosdiazgirol](https://www.linkedin.com/in/carlosdiazgirol/)
-- GitHub: [CarlosDiazGirol](https://github.com/CarlosDiazGirol)
+## Paleta de Colores (Mantenida)
+```css
+--primary: #2c3e50
+--secondary: #e74c3c
+--accent: #3498db
+--highlight: #f39c12
+```
+
+## Proximos Pasos (Sprint 5)
+En el siguiente sprint se podría añadir:
+- Validación de formulario con JavaScript
+- Fetch API para datos externos
+- Filtrado dinámico de skills
+- Animaciones scroll reveal
+
+## Tecnologías Utilizadas
+- HTML5 semántico
+- CSS3 con variables personalizadas
+- JavaScript ES6+ (módulos, template strings, arrow functions)
+- LocalStorage API
+- Flexbox para layouts
+- SVG para iconos
+- Media Queries responsive
 
 ---
+
+**Nota**: Este sprint añade toda la interactividad JavaScript necesaria manteniendo la coherencia visual del Sprint 3. El código es modular, mantenible y escalable.
