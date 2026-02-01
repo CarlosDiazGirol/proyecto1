@@ -1,53 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>CheatSheet CSS</title>
-  </head>
 
-  <body>
-    <div class="site-container">
-      <header id="site-header" class="site-header"></header>
-      <main id="site-main">
-        <div class="site-content">
-          <!-- Pega esto dentro de <div class="site-content"> ... </div> -->
-          <section class="section cheatsheet">
-            <header class="cheatsheet-hero" id="top">
-              <span class="cs-badge">Cheat Sheet</span>
-              <h1>JavaScript</h1>
-              <p>
-                Guía rápida de JavaScript moderno: variables, tipos, template
-                strings, operadores, control de flujo, funciones,
-                arrays/strings/números, módulos, DOM, asincronía
-                (promesas/fetch), fechas, storage y objetos/JSON.
-              </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>CheatSheet JavaScript</title>
+</head>
 
-              <nav class="cheatsheet-sections">
-                <a href="#variables">Variables</a>
-                <a href="#tipos">Tipos</a>
-                <a href="#templates">Template Strings</a>
-                <a href="#comentarios">Comentarios</a>
-                <a href="#operadores">Operadores</a>
-                <a href="#control">Control</a>
-                <a href="#funciones">Funciones</a>
-                <a href="#arrays">Arrays</a>
-                <a href="#strings">Strings</a>
-                <a href="#numeros">Números</a>
-                <a href="#modulos">Módulos</a>
-                <a href="#dom">DOM</a>
-                <a href="#promesas">Promesas</a>
-                <a href="#fetch">Fetch / Async</a>
-                <a href="#fechas">Date</a>
-                <a href="#storage">Storage</a>
-                <a href="#objetos">Objetos / JSON</a>
-                <a href="#extras">Extras</a>
+<body>
+  <header></header>
+  
+  <nav class="cheatsheet-nav" id="cheatsheetNav">
+    <a href="#variables">Variables</a>
+    <a href="#tipos">Tipos</a>
+    <a href="#templates">Template Strings</a>
+    <a href="#comentarios">Comentarios</a>
+    <a href="#operadores">Operadores</a>
+    <a href="#control">Control</a>
+    <a href="#funciones">Funciones</a>
+    <a href="#arrays">Arrays</a>
+    <a href="#strings">Strings</a>
+    <a href="#numeros">Números</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#dom">DOM</a>
+    <a href="#promesas">Promesas</a>
+    <a href="#fetch">Fetch / Async</a>
+    <a href="#fechas">Date</a>
+    <a href="#storage">Storage</a>
+    <a href="#objetos">Objetos / JSON</a>
+    <a href="#extras">Extras</a>
+  </nav>
+  
+  <main>
+    <section class="cheatsheet-hero" id="top">
+      <span class="cs-badge">Cheat Sheet</span>
+      <h1>JavaScript</h1>
+      <p>
+        Guía rápida de JavaScript moderno: variables, tipos, template
+        strings, operadores, control de flujo, funciones,
+        arrays/strings/números, módulos, DOM, asincronía
+        (promesas/fetch), fechas, storage y objetos/JSON.
+      </p>
+    </section>
+
+    <section class="cheatsheet-content">
               </nav>
             </header>
 
@@ -778,10 +778,10 @@ setTimeout(() => clearInterval(intId), 5000);</code></pre>
               </article>
             </div>
           </section>
-        </div>
       </main>
-      <footer id="site-footer" class="site-footer"></footer>
-    </div>
-    <script defer type="module" src="./js/main.js"></script>
-  </body>
+
+  <footer></footer>
+  <script defer type="module" src="./js/main.js"></script>
+</body>
+
 </html>

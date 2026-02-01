@@ -1,47 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>CheatSheet CSS</title>
-  </head>
 
-  <body>
-    <div class="site-container">
-      <header id="site-header" class="site-header"></header>
-      <main id="site-main">
-        <div class="site-content">
-          <section class="section cheatsheet">
-            <header class="cheatsheet-hero" id="top">
-              <span class="cs-badge">Cheat Sheet</span>
-              <h1>CSS</h1>
-              <p>
-                Guía rápida de CSS moderno: selectores, texto, colores/fondos,
-                box model, display/position, flexbox, grid, transiciones,
-                animaciones y media queries.
-              </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>CheatSheet CSS</title>
+</head>
 
-              <nav class="cheatsheet-sections">
-                <a href="#selectores">Selectores</a>
-                <a href="#texto">Texto</a>
-                <a href="#colores">Colores y fondos</a>
-                <a href="#box">Box model</a>
-                <a href="#display">Display / Position</a>
-                <a href="#flex">Flexbox</a>
-                <a href="#grid">Grid</a>
-                <a href="#transiciones">Transiciones</a>
-                <a href="#animaciones">Animaciones</a>
-                <a href="#media">Media queries</a>
-              </nav>
-            </header>
+<body>
+  <header></header>
+  
+  <nav class="cheatsheet-nav" id="cheatsheetNav">
+    <a href="#selectores">Selectores</a>
+    <a href="#texto">Texto</a>
+    <a href="#colores">Colores y fondos</a>
+    <a href="#box">Box model</a>
+    <a href="#display">Display / Position</a>
+    <a href="#flex">Flexbox</a>
+    <a href="#transiciones">Transiciones</a>
+    <a href="#animaciones">Animaciones</a>
+    <a href="#media">Media queries</a>
+  </nav>
+  
+  <main>
+    <section class="cheatsheet-hero" id="top">
+      <span class="cs-badge">Cheat Sheet</span>
+      <h1>CSS</h1>
+      <p>
+        Guía rápida de CSS moderno: selectores, texto, colores/fondos,
+        box model, display/position, flexbox, grid, transiciones,
+        animaciones y media queries.
+      </p>
+    </section>
 
-            <div class="cheatsheet-info">
+    <section class="cheatsheet-content">
               <article class="cs-card" id="selectores">
                 <h2>Selectores</h2>
                 <p class="cs-mini">
@@ -372,10 +368,10 @@ p::first-line { font-weight: 700; }
               </article>
             </div>
           </section>
-        </div>
       </main>
-      <footer id="site-footer" class="site-footer"></footer>
-    </div>
-    <script defer type="module" src="./js/main.js"></script>
-  </body>
+
+  <footer></footer>
+  <script defer type="module" src="./js/main.js"></script>
+</body>
+
 </html>

@@ -6,40 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png"
     href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/styles.css">
   <title>CheatSheet HTML</title>
 </head>
 
 <body>
-  <div class="site-container">
-    <header id="site-header" class="site-header"></header>
-    <main id="site-main">
-      <div class="site-content">
-        <section class="section cheatsheet">
-          <header class="cheatsheet-hero" id="top">
-            <span class="cs-badge">Cheat Sheet</span>
-            <h1>HTML</h1>
-            <p>
-              Guía rápida para escribir HTML moderno y semántico: estructura, meta, texto, enlaces, listas,
-              multimedia, tablas, formularios, accesibilidad y buenas prácticas.
-            </p>
+  <header></header>
+  
+  <nav class="cheatsheet-nav" id="cheatsheetNav">
+    <a href="#estructura">Estructura</a>
+    <a href="#meta">Meta</a>
+    <a href="#texto">Texto</a>
+    <a href="#enlaces">Enlaces</a>
+    <a href="#listas">Listas</a>
+    <a href="#media">Multimedia</a>
+    <a href="#forms">Formularios</a>
+    <a href="#semantica">Semántica</a>
+    <a href="#globales">Atributos</a>
+    <a href="#a11y">A11y</a>
+  </nav>
+  
+  <main>
+    <section class="cheatsheet-hero" id="top">
+      <span class="cs-badge">Cheat Sheet</span>
+      <h1>HTML</h1>
+      <p>
+        Guía rápida para escribir HTML moderno y semántico: estructura, meta, texto, enlaces, listas,
+        multimedia, tablas, formularios, accesibilidad y buenas prácticas.
+      </p>
+    </section>
 
-            <nav class="cheatsheet-sections">
-              <a href="#estructura">Estructura</a>
-              <a href="#meta">Meta</a>
-              <a href="#texto">Texto</a>
-              <a href="#enlaces">Enlaces</a>
-              <a href="#listas">Listas</a>
-              <a href="#media">Multimedia</a>
-              <a href="#forms">Formularios</a>
-              <a href="#semantica">Semántica</a>
-              <a href="#globales">Atributos</a>
-              <a href="#a11y">A11y</a>
-              <a href="#buenas">Buenas prácticas</a>
-            </nav>
-          </header>
-
-          <div class="cheatsheet-info">
+    <section class="cheatsheet-content">
             <article class="cs-card" id="estructura">
               <h2>Estructura básica</h2>
               <p class="cs-mini">Plantilla mínima recomendada.</p>
@@ -272,12 +270,9 @@
             </article>
           </div>
         </section>
+      </main>
 
-
-      </div>
-    </main>
-    <footer id="site-footer" class="site-footer"></footer>
-  </div>
+  <footer></footer>
   <script defer type="module" src="./js/main.js"></script>
 </body>
 

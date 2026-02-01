@@ -121,6 +121,14 @@ const skills = [
     tags: ["Build Tool", "Dev Server"]
   },
   {
+    name: "SASS/SCSS",
+    icon: "https://cdn.simpleicons.org/sass/CC6699",
+    state: "dominada",
+    level: "intermedio",
+    description: "Preprocesador CSS con variables, mixins y funciones.",
+    tags: ["Preprocessor", "Mixins", "Variables"]
+  },
+  {
     name: "Next.js",
     icon: "https://cdn.simpleicons.org/nextdotjs/000000",
     state: "en progreso",

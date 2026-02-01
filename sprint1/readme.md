@@ -60,6 +60,5 @@ En el siguiente sprint se añadirán:
 - Mejoras visuales en la navegación y formulario
 
 ## Notas
-- El formulario está configurado para enviar a FormSubmit (carlos@thebridge.tech)
 - Las imágenes están alojadas en Cloudinary
 - Los estilos CSS están vacíos en este sprint (solo estructura HTML)

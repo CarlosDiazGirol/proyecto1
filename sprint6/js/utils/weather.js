@@ -31,9 +31,11 @@ const getWeather = () => {
         // Renderizar el clima en el DOM
         weatherContainer.innerHTML = `
           <div class="weather-widget">
+            <div class="weather-top">
+              <img src="https:${icon}" alt="${condition}" class="weather-icon">
+              <span class="weather-temp">${temp}°C</span>
+            </div>
             <span class="weather-city">${city}</span>
-            <img src="https:${icon}" alt="${condition}" class="weather-icon">
-            <span class="weather-temp">${temp}°C</span>
           </div>
         `
       } catch (error) {

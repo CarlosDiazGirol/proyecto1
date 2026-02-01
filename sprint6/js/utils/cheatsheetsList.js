@@ -1,22 +1,21 @@
 import cheatsheets from "../data/cheatsheets.js";
-const cheatsheetsList = document.getElementById('cheatsheetsList')
-
 
 const getCheatsheets = () => {
-  const results = cheatsheets.map(cs => {
-    const template = `
-      <li>
-      <a href="${cs.link}">
-        <div>
-          <img src="${cs.icon}" alt="${cs.name}">
-        </div>
-        <h3>CheatSheet <span>${cs.name}</span></h3>
-      </a>
-      </li>
-    `
-    return template 
-  })
-  cheatsheetsList && (cheatsheetsList.innerHTML = results.join("")) 
+  const container = document.getElementById('cheatsheets-container');
+  
+  if (!container) return;
+
+  const html = cheatsheets.map(cs => `
+    <a href=".${cs.link}" class="cheatsheet-card">
+      <div class="cheatsheet-icon-wrapper">
+        <img src="${cs.icon}" alt="${cs.name}" class="cheatsheet-icon">
+      </div>
+      <h3>${cs.name}</h3>
+      <p>Guía rápida de referencia</p>
+    </a>
+  `).join('');
+
+  container.innerHTML = html;
 }
 
 export default getCheatsheets

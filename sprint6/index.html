@@ -4,69 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dataimages/image/upload/v1768570952/Data-CV/datalogo_fffq2x.png">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/styles.css">
   <title>Home - CV & Portfolio de Carlos Díaz Girol</title>
 </head>
 <body>
-  <div class="site-container"> 
-    <header id="site-header" class="site-header"></header>
-    <main id="site-main">
-      <div class="site-content">
-        <section class="hero">
-          <div class="hero-content">
-            <article class="hero-profile">
-              <div class="hero-image-title">
-                <img src="https://res.cloudinary.com/dataimages/image/upload/v1768565584/Data-CV/runwaydata_bsrknh.png" alt="Foto de DATA">
-                <div class="hero-title">
-                  <h1>DATA</h1>
-                  <h2>Fullstack Developer & Tech Educator</h2>
-                </div>
-              </div>
-              <p>Soy Carlos Díaz Girol, <strong> A.K.A. Data</strong>. Durante más de dos décadas he ocupado puestos de <strong>CTO</strong> y liderazgo tecnológico en proyectos de todos los tamaños, desde start-ups hasta organizaciones globales. Ese recorrido multidisciplinar, que abarca diseño UX/UI, desarrollo full-stack, ciencia de datos y estrategia de negocio, me ha dado <strong>dos superpoderes</strong>: traducir necesidades de mercado a soluciones técnicas viables y construir equipos que disfrutan escribiendo código de calidad.</p> <p> <strong>Me apasiona compartir conocimiento</strong>: imparto clases como Lead Instructor en <strong>desarrollo full-stack</strong> y mentorizo a profesionales que buscan evolucionar su carrera hacia el mundo digital. Si quieres conocer más detalles sobre mi trayectoria, aquí tienes mi <a href="https://www.linkedin.com/in/carlosdiazgirol/" target="_blank">LinkedIn</a>.</p> 
-              <p>Hoy, además de impartir clases de desarrollo full stack y seguir formándome —esta vez en ciberseguridad— concentro mi energía en la inteligencia artificial aplicada: diseño y programo sistemas que combinan LLMs, RAG y automatización de procesos para que la IA deje de ser promesa y se convierta en valor real. En resumen, hago que las máquinas trabajen para mí (y para tus proyectos) gracias a una mezcla de curiosidad, experiencia y mucho código.</p> 
-              <p class="quote">«Esta vez no dejaremos que Skynet se adueñe de la humanidad.»</p>  
-            </article>
+  <header></header>
+
+  <main>
+    <section class="hero">
+      <article class="hero-content">
+        <img src="https://res.cloudinary.com/dataimages/image/upload/v1768565584/Data-CV/runwaydata_bsrknh.png" alt="Foto de DATA" class="hero-image">
+        <div class="hero-text">
+          <h1>Carlos Díaz Girol</h1>
+          <h2>Fullstack Developer & Tech Educator</h2>
+          <p>
+            Soy Carlos Díaz Girol, <strong>A.K.A. Data</strong>. Durante más de dos décadas he ocupado puestos de <strong>CTO</strong> 
+            y liderazgo tecnológico en proyectos de todos los tamaños, desde start-ups hasta organizaciones globales. 
+            Ese recorrido multidisciplinar, que abarca diseño UX/UI, desarrollo full-stack, ciencia de datos y estrategia de negocio, 
+            me ha dado <strong>dos superpoderes</strong>: traducir necesidades de mercado a soluciones técnicas viables y 
+            construir equipos que disfrutan escribiendo código de calidad.
+          </p>
+          <p>
+            <strong>Me apasiona compartir conocimiento</strong>: imparto clases como Lead Instructor en <strong>desarrollo full-stack</strong> 
+            y mentorizo a profesionales que buscan evolucionar su carrera hacia el mundo digital.
+          </p>
+          <p>
+            Hoy, además de impartir clases de desarrollo full stack concentro mi energía en la inteligencia artificial aplicada: diseño y programo sistemas que combinan LLMs, 
+            RAG y automatización de procesos para que la IA deje de ser promesa y se convierta en valor real.
+          </p>
+        </div>
+        <div class="hero-buttons">
+          <a href="https://www.linkedin.com/in/carlosdiazgirol/" target="_blank" class="btn btn-primary">LinkedIn</a>
+          <a href="https://github.com/CarlosDiazGirol" target="_blank" class="btn btn-primary">GitHub</a>
+          <a href="contacto.html" class="btn btn-secondary">Contacto</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div id="skills-container"></div>
+    </section>
+
+    <section class="section">
+      <h2>Proyectos en Progreso</h2>
+      <div class="projects-container">
+        <article class="project-card">
+          <h3>CV-Portfolio-DATA</h3>
+          <p>Portfolio personal con integración de APIs, dark mode y diseño responsive. Proyecto desarrollado con HTML5, CSS3 y JavaScript vanilla usando arquitectura modular.</p>
+          <div class="project-tech">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">WeatherAPI</span>
           </div>
-          <aside class="hero-actions">
-            <a href="https://github.com/CarlosDiazGirol" target="_blank"><button class="btn btn-primary">Github</button></a>
-            <a href="https://www.linkedin.com/in/carlosdiazgirol/" target="_blank"><button class="btn btn-primary">LinkedIn</button></a>
-            <a href="./contacto.html" target="_self"><button class="btn btn-secondary">Contacto</button></a>
-          </aside>
-        </section>
-        
-        <section id="skills" class="category tech-stack">
-          <h2>Tech Stack</h2>
-          <ul id="skillsList" class="skills"></ul>
-        </section>
-        
-        <section class="category current-project">
-          <h2>Proyectos en progreso</h2>
-          <div class="project-grid">
-            <article class="project-card">
-              <h3>CV-Portfolio-DATA</h3>
-              <p class="project-subtitle">Integrar todo el conocimiento</p>
-              <ul class="project-features">
-                <li>Arquitectura de proyecto completo</li>
-                <li>Layout reutilizable con JS</li>
-                <li>Integración de APIs externas</li>
-                <li>Animaciones y microinteracciones</li>
-                <li>Deploy y optimización</li>
-              </ul>
-              <a href="https://github.com/CarlosDiazGirol/CV-Portfolio-DATA" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Ver en GitHub
-              </a>
-            </article>
+          <div class="project-links">
+            <a href="https://github.com/CarlosDiazGirol/proyecto1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Ver en GitHub
+            </a>
+            <a href="https://carlosdiazgirol.github.io/proyecto1/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Ver Demo
+            </a>
           </div>
-        </section>
-        
-        <section id="cheatsheets" class="category cheatsheets">
-          <h2>Cheatsheets</h2>
-          <ul id="cheatsheetsList" class="cheatsheetsList"></ul>
-        </section>        
+        </article>
       </div>
-    </main>
-    <footer id="site-footer" class="site-footer"></footer>
-  </div>
-  <script defer type="module" src="./js/main.js"></script>
+    </section>
+
+    <section id="cheatsheets" class="section">
+      <h2>Cheatsheets</h2>
+      <p class="section-intro">Guías rápidas de referencia para las tecnologías más utilizadas en desarrollo web</p>
+      <div id="cheatsheets-container"></div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
